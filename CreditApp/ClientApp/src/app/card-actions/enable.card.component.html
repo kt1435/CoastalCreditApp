@@ -1,0 +1,12 @@
+<h1>Enable Card</h1>
+<div *ngFor="let card of getCards">
+    <div *ngIf="!isLoading">
+        <label>{{card.cardName}} Status: {{card.isOn ? 'On' : 'Off'}}</label>
+        <br>
+        <br>
+        <ons-switch [value]="card.isOn" (change)="handleToggleSwitch(card)"></ons-switch>
+    </div>
+</div>
+<div *ngIf="isLoading">
+    <ons-progress-circular indeterminate></ons-progress-circular>
+</div>

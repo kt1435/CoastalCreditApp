@@ -1,0 +1,32 @@
+<div class='main-nav'>
+    <div class='navbar menu-main-bar'>
+        <div class='navbar-header'>
+            <ons-button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'
+                [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+                <span class='sr-only'>Toggle navigation</span>
+                <ons-icon icon="fa-cog"></ons-icon>
+            </ons-button>
+            <a class='navbar-brand' [routerLink]='["/"]'>Coastal Credit Union</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-home'></span> Customer Information
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/enableCard"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-education'></span> Turn On/Off
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]'>
+                    <a [routerLink]='["/reportIssue"]' (click)='collapse()'>
+                        <span class='glyphicon glyphicon-th-list'></span> Report Issue
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

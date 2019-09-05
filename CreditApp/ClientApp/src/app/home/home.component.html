@@ -1,0 +1,13 @@
+<h1>Customer Information</h1>
+<div>Card Holder: {{currentCardHolder.cardHolder}}</div>
+<div>Card Selection:&nbsp;
+    <ons-select [(ngModel)]="currentCard" [attr.modifier]="currentCard" [required]="true">
+        <option *ngFor="let selection of getCards" [value]="selection.cardId">
+            {{ selection.cardName }}
+        </option>
+    </ons-select>
+</div>
+<div *ngIf="showCardInfo">
+    <span>Id: {{currentSelectedCard.cardId}}</span>
+    <span>Masked Card Number: {{currentSelectedCard.maskCardNumber}}</span>
+</div>
