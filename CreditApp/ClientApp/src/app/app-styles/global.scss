@@ -9,6 +9,79 @@
     }
   }
 
+.content {
+  border: 1px solid $color-text-dark;
+  border-radius: 3px;
+  padding: none;
+  margin: none;
+  text-align: center;
+  margin-top: 1vh;
+}
+
+.list-header {
+  padding: 5px;
+  >h3 {
+    text-align:  center;
+  }
+}
+
+.report-section {
+  margin-top: .5vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
+}
+
+.issue-comment-input {
+  width: initial !important;
+  padding: 1vh;
+  margin: 1vmin;
+}
+
+.submit-button {
+  margin: 1vmin;
+}
+
+.loading-icon {
+  text-align: center;
+  .progress-circular {
+    width: 8vmin;
+    height: 8vmin;
+  }
+}
+
+.select-input:invalid {
+  border-radius: 5px;
+  background-color: $color-gray-light;
+}
+
+.select-input {
+  border-radius: 5px;
+  background-color: $color-gray-light;
+}
+
+.list-item--expandable {
+  background-repeat: initial;
+  .list-item__top {
+    background-color: white;
+  }
+}
+
+
+.list-item {
+  padding: 0 0 0 0 !important;
+  margin: 0 0 0 0 !important;
+  background-color: white;
+  .center {
+    flex-direction: column;
+  }
+  .expandable-content {
+    text-align: center;
+  }
+  .list-item__expandable-content {
+    background-color: white;
+  }
+}
+
 a {
   color: $color-text-dark !important;
 }

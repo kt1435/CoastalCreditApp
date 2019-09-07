@@ -24,7 +24,7 @@ namespace CreditApp.Controllers
         }
 
         [HttpPost("postCardIssue")]
-        public ActionResult postCardIssue(string apiKey, [FromBody] ICardReport issue)
+        public ActionResult postCardIssue(string apiKey, [FromBody] ICardReport issue = null)
         {
             try
             {

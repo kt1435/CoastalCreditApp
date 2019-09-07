@@ -1,12 +1,23 @@
-<h1>Enable Card</h1>
-<div *ngFor="let card of getCards">
-    <div *ngIf="!isLoading">
-        <label>{{card.cardName}} Status: {{card.isOn ? 'On' : 'Off'}}</label>
-        <br>
-        <br>
-        <ons-switch [value]="card.isOn" (change)="handleToggleSwitch(card)"></ons-switch>
-    </div>
-</div>
-<div *ngIf="isLoading">
-    <ons-progress-circular indeterminate></ons-progress-circular>
+<div class="content">
+    <ons-list>
+        <ons-list-header>
+            <h3>Enable Cards</h3>
+        </ons-list-header>
+        <div *ngFor="let card of getCards">
+            <div *ngIf="!isLoading">
+                <ons-list-item>
+                    <ons-list-item expandable>
+                            <label>{{card.cardName}} Status: {{card.isOn ? 'On' : 'Off'}}</label>
+                        <div class="expandable-content">
+                            <ons-switch [value]="card.isOn" (change)="handleToggleSwitch(card)"></ons-switch>
+                        </div>
+                    </ons-list-item>
+
+                </ons-list-item>
+            </div>
+        </div>
+        <div *ngIf="isLoading" class="loading-icon">
+            <ons-progress-circular indeterminate></ons-progress-circular>
+        </div>
+    </ons-list>
 </div>

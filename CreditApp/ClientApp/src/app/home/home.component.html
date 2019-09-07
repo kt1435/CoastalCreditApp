@@ -1,13 +1,21 @@
-<h1>Customer Information</h1>
-<div>Card Holder: {{currentCardHolder.cardHolder}}</div>
-<div>Card Selection:&nbsp;
-    <ons-select [(ngModel)]="currentCard" [attr.modifier]="currentCard" [required]="true">
-        <option *ngFor="let selection of getCards" [value]="selection.cardId">
-            {{ selection.cardName }}
-        </option>
-    </ons-select>
-</div>
-<div *ngIf="showCardInfo">
-    <span>Id: {{currentSelectedCard.cardId}}</span>
-    <span>Masked Card Number: {{currentSelectedCard.maskCardNumber}}</span>
+<div class="content">
+    <ons-list>
+        <ons-list-header>
+            <h3>Customer Information</h3>
+        </ons-list-header>
+        <ons-list-item>
+            <div class="report-section">Card Holder: {{currentCardHolder.cardHolder}}</div>
+            <div class="report-section">Card Selection:&nbsp;
+                <ons-select [(ngModel)]="currentCard" [attr.modifier]="currentCard" [required]="true">
+                    <option *ngFor="let selection of getCards" [value]="selection.cardId">
+                        {{ selection.cardName }}
+                    </option>
+                </ons-select>
+            </div>
+            <div *ngIf="showCardInfo">
+                <span>Id: {{currentSelectedCard.cardId}}</span>
+                <span>Masked Card Number: {{currentSelectedCard.maskCardNumber}}</span>
+            </div>
+        </ons-list-item>
+    </ons-list>
 </div>

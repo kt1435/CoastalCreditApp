@@ -1,27 +1,35 @@
-<h1>Report Issue</h1>
+<div class="content">
+    <ons-list>
+        <ons-list-header>
+            <h3>Report Issue</h3>
+        </ons-list-header>
 
-<div>Card Selection:&nbsp;
-        <ons-select [(ngModel)]="currentCard" [attr.modifier]="currentCard" [required]="true">
-            <option *ngFor="let selection of getCards" [value]="selection.cardId">
-                {{ selection.cardName }}
-            </option>
-        </ons-select>
-    </div>
+        <div class="report-section">Card Selection:&nbsp;
+            <ons-select [(ngModel)]="currentCard" [attr.modifier]="currentCard" [required]="true">
+                <option *ngFor="let selection of getCards" [value]="selection.cardId">
+                    {{ selection.cardName }}
+                </option>
+            </ons-select>
+        </div>
 
-<div>Card Status Selection:&nbsp;
-    <ons-select [(ngModel)]="cardStatusSelection" [attr.modifier]="cardStatusSelection" [required]="true">
-        <option *ngFor="let selection of selections" [value]="selection">
-            {{ selection }}
-        </option>
-    </ons-select>
+        <div class="report-section">Card Status Selection:&nbsp;
+            <ons-select [(ngModel)]="cardStatusSelection" [attr.modifier]="cardStatusSelection" [required]="true">
+                <option *ngFor="let selection of selections" [value]="selection">
+                    {{ selection }}
+                </option>
+            </ons-select>
+        </div>
+
+        <div class="issue-comment-input">
+            <ons-input placeholder="Add comments here" [(value)]="comments"></ons-input>
+        </div>
+
+        <div class="submit-button">
+            <ons-button [disabled]="disableSubmit" (click)="handleReportClick()">Submit</ons-button>
+        </div>
+        <ons-toast id="myToast" animation="ascend">
+            Report Issue Completed
+            <button onclick="myToast.hide()">Ok</button>
+        </ons-toast>
+    </ons-list>
 </div>
-
-<div class="issue-comment-input">
-    <ons-input placeholder="Add comments here" [(value)]="comments"></ons-input>
-</div>
-
-<ons-button [disabled]="disableSubmit" (click)="handleReportClick()">Submit</ons-button>
-<ons-toast id="myToast" animation="ascend">
-    Report Issue Completed
-    <button onclick="myToast.hide()">Ok</button>
-</ons-toast>
